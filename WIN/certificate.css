@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header img {
+  width: 250px;
+  height: 100px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Antonio', sans-serif;
+  font-size: 15px;
+  background: #9BBEC8;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 999;
+}
+
+nav ul.navigation-menu {
+  display: flex;
+  background-color: #164863;
+  color: white;
+  height: 50px;
+  width: 700px;
+}
+
+nav ul.navigation-menu li {
+  flex: 1;
+}
+
+nav ul.navigation-menu li a {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul.navigation-menu li ul {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  border-radius: 0px;
+  background-color: transparent;
+  flex-direction: column;
+  perspective: 500px;
+}
+
+nav ul.navigation-menu li ul li {
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  display: none;
+  opacity: 0;
+}
+
+nav ul.navigation-menu li ul li ul {
+  position: absolute;
+  top: 0px;
+  left: 100%;
+  width: 200px;
+}
+
+nav ul.navigation-menu li ul li ul li {
+  display: none;
+}
+
+nav ul.navigation-menu li ul li {
+  background-color: #427D9D;
+}
+
+nav ul.navigation-menu li ul li ul li {
+  background-color: #427D9D;
+}
+
+nav ul.navigation-menu li {
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul.navigation-menu li:hover {
+  background-color: #427D9D;
+}
+
+nav ul.navigation-menu li:hover ul li {
+  display: block;
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul.navigation-menu li:hover ul li:hover {
+  background-color: #164863;
+}
+
+nav ul.navigation-menu li:hover ul li ul li {
+  display: none;
+}
+
+nav ul.navigation-menu li:hover ul li:hover ul li {
+  display: block;
+}
+
+nav ul.navigation-menu li:hover ul li:nth-child(1) {
+  animation-name: menu-1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 300ms;
+  animation-delay: 100ms;
+  animation-fill-mode: forwards;
+}
+
+nav ul.navigation-menu li:hover ul li:nth-child(2) {
+  animation-name: menu-1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 300ms;
+  animation-delay: 200ms;
+  animation-fill-mode: forwards;
+}
+
+nav ul.navigation-menu li:hover ul li:nth-child(3) {
+  animation-name: menu-1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 300ms;
+  animation-delay: 300ms;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes menu-1 {
+  0% {
+    transform: translateY(20px) rotateY(90deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+#menu__toggle {
+  opacity: 0;
+}
+
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+  right: 0;
+}
+
+.menu__btn {
+  position: fixed;
+  top: 43px;
+  right: 27px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menu__btn:hover {
+  z-index: 1001;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+  transition-duration: .25s;
+}
+
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: #ECEFF1;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+  transition-duration: .25s;
+  z-index: 998;
+}
+
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: Antonio;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
+}
+
+.menu__item:hover {
+  background-color: #CFD8DC;
+}
+
+section#spacer {
+  padding: 18px;
+}
+
+section#gall {
+  display: flex;
+  justify-content: center;
+  padding: 90px;
+  margin-bottom: 110px;
+}
+
+.gallrotate{
+  position:relative;
+  width:300px;
+  height:200px;
+  transform-style:preserve-3d;
+  animation:rotate 35s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes rotate{
+  from{
+    transform:perspective(1200px) rotateY(0deg);
+  }
+  
+  to{
+    transform:perspective(1200px) rotateY(360deg);
+  }
+}
+
+.gallrotate span{
+  position:absolute;
+  width:100%;
+  height:100%;
+  transform-origin:center;
+  transform-style:preserve-3d;
+  transform:rotateY(calc(var(--i) * 45deg)) translateZ(380px);
+}
+
+.gallrotate span img{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.footer {
+ position: relative;
+ width: 100%;
+ background: #164863;
+ padding: 30px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+}
+
+.footer p {
+ color: #fff;
+ margin: 0 0 10px 0;
+ font-size: 18px;
+ font-family: Antonio;
+}
+
+.wave {
+ position: absolute;
+ top: -100px;
+ left: 0;
+ width: 100%;
+ height: 100px;
+ background: url("images/wavee.png");
+ background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+ z-index: 1000;
+ opacity: 1;
+ bottom: 0;
+ animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+ z-index: 999;
+ opacity: 0.5;
+ bottom: 10px;
+ animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+ z-index: 1000;
+ opacity: 0.2;
+ bottom: 15px;
+ animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+ z-index: 999;
+ opacity: 0.7;
+ bottom: 20px;
+ animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+ }
+  100% {
+    background-positon-x: 0px;
+ }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+ }
+  100% {
+    background-positon-x: 0px;
+ }
+}
